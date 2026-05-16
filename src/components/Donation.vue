@@ -1,28 +1,28 @@
 <template>
   <div>
     <div class="fixed top-0 left-0 h-full w-full flex items-center justify-center z-30 p-4">
-      <div class="w-full h-[80vh] max-w-screen-sm rounded-lg bg-white flex flex-col gap-2">
+      <div class="w-full h-[80vh] max-w-screen-sm rounded-lg bg-white flex flex-col gap-2 dark:bg-slate-800">
         <div class="flex-none flex justify-between items-center px-6 py-2">
-          <div class="text-thin text-xl">Donation</div>
+          <div class="text-thin text-xl dark:text-slate-100">Donation</div>
           <button class="button button-blend transition rounded-full p-4" @click="close"><Close /></button>
         </div>
 
         <div class="px-6 grow flex flex-col gap-4 overflow-scroll">
           <div class="flex justify-center">
-            <div class="rounded-full p-1 bg-indigo-100 flex justify-center gap-1">
+            <div class="rounded-full p-1 bg-indigo-100 flex justify-center gap-1 dark:bg-slate-700">
               <button
                 class="button text-xs w-36 px-3 py-1.5 rounded-full"
                 :class="{
-                  'bg-indigo-800 text-indigo-100': donationChoice === 'buymeacoffee',
-                  'hover:bg-indigo-200': donationChoice !== 'buymeacoffee'
+                  'bg-indigo-800 text-indigo-100 dark:bg-indigo-300 dark:text-indigo-900': donationChoice === 'buymeacoffee',
+                  'hover:bg-indigo-200 dark:hover:bg-slate-600': donationChoice !== 'buymeacoffee'
                   }"
                 @click="donationChoice = 'buymeacoffee'"
               >Fiat</button>
               <button
                 class="button text-xs w-36 px-3 py-1.5 rounded-full"
                 :class="{
-                  'bg-indigo-800 text-indigo-100': donationChoice === 'cryptocurrency',
-                  'hover:bg-indigo-200': donationChoice !== 'cryptocurrency'
+                  'bg-indigo-800 text-indigo-100 dark:bg-indigo-300 dark:text-indigo-900': donationChoice === 'cryptocurrency',
+                  'hover:bg-indigo-200 dark:hover:bg-slate-600': donationChoice !== 'cryptocurrency'
                   }"
                 @click="donationChoice = 'cryptocurrency'"
               >Cryptocurrency</button>
@@ -31,18 +31,18 @@
 
           <div class="grow flex flex-col">
             <div v-if="donationChoice === 'buymeacoffee'" class="w-full flex flex-col items-center">
-              <div class="text-center italic text-xs mb-4">Thank you for being here!
+              <div class="text-center italic text-xs mb-4 dark:text-slate-300">Thank you for being here!
                 LRCLIB is always free and nonprofit.
                 However, maintaining and developing LRCLIB requires both time and financial resources.
                 If you can, please consider a donation—every amount, no matter how small, is appreciated!</div>
 
-              <div class="text-center font-thin text-2xl mb-4">GitHub Sponsors</div>
+              <div class="text-center font-thin text-2xl mb-4 dark:text-slate-100">GitHub Sponsors</div>
 
-              <a href="https://github.com/sponsors/tranxuanthang" class="mb-8" target="_blank">
+              <a href="https://github.com/sponsors/tranxuanthang" class="mb-8 dark:text-indigo-300" target="_blank">
                 https://github.com/sponsors/tranxuanthang
               </a>
 
-              <div class="text-center font-thin text-2xl mb-4">Buy Me A Coffee</div>
+              <div class="text-center font-thin text-2xl mb-4 dark:text-slate-100">Buy Me A Coffee</div>
 
               <a href="https://www.buymeacoffee.com/thangtran" class="mb-8" target="_blank">
                 <img
@@ -51,26 +51,26 @@
                   height="72"
                 /></a>
 
-              <div class="text-center font-thin text-2xl mb-4">Paypal</div>
+              <div class="text-center font-thin text-2xl mb-4 dark:text-slate-100">Paypal</div>
 
-              <a href="https://paypal.me/tranxuanthang98" class="mb-8" target="_blank">
+              <a href="https://paypal.me/tranxuanthang98" class="mb-8 dark:text-indigo-300" target="_blank">
                 https://paypal.me/tranxuanthang98
               </a>
             </div>
 
             <div v-if="donationChoice === 'cryptocurrency'">
-              <div class="text-center italic text-xs mb-4">Thank you for being here!
+               <div class="text-center italic text-xs mb-4 dark:text-slate-300">Thank you for being here!
                 LRCLIB is always free and nonprofit.
                 However, maintaining and developing LRCLIB requires both time and financial resources.
                 If you can, please consider a donation—every amount, no matter how small, is appreciated!</div>
 
-              <div class="text-center font-thin text-2xl mb-4">Monero (XMR)</div>
+              <div class="text-center font-thin text-2xl mb-4 dark:text-slate-100">Monero (XMR)</div>
 
-              <div class="bg-indigo-900 rounded px-4 py-2 text-indigo-100 break-all mb-8">43ZN5qDdGQhPGthFnngD8rjCHYLsEFBcyJjDC1GPZzVxWSfT8R48QCLNGyy6Z9LvatF5j8kSgv23DgJpixJg8bnmMnKm3b7</div>
+              <div class="bg-indigo-900 rounded px-4 py-2 text-indigo-100 break-all mb-8 dark:bg-indigo-950 dark:text-indigo-200">43ZN5qDdGQhPGthFnngD8rjCHYLsEFBcyJjDC1GPZzVxWSfT8R48QCLNGyy6Z9LvatF5j8kSgv23DgJpixJg8bnmMnKm3b7</div>
 
-              <div class="text-center font-thin text-2xl mb-4">Litecoin (LTC)</div>
+              <div class="text-center font-thin text-2xl mb-4 dark:text-slate-100">Litecoin (LTC)</div>
 
-              <div class="bg-indigo-900 rounded px-4 py-2 text-indigo-100 break-all">ltc1q7texq5qsp59gclqlwf6asrqmhm98gruvz94a48</div>
+              <div class="bg-indigo-900 rounded px-4 py-2 text-indigo-100 break-all dark:bg-indigo-950 dark:text-indigo-200">ltc1q7texq5qsp59gclqlwf6asrqmhm98gruvz94a48</div>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <div class="fixed top-0 left-0 h-full w-full z-20 bg-black/30">
+    <div class="fixed top-0 left-0 h-full w-full z-20 bg-black/30 dark:bg-black/50">
     </div>
   </div>
 </template>

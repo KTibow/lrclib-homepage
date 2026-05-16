@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen py-6 px-2 mx-auto w-full max-w-screen-sm">
     <div class="text-sm mb-8">
-      <router-link to="/" class="text-indigo-400 hover:text-indigo-500 active:text-indigo-700 transition flex items-center uppercase gap-2">
+      <router-link to="/" class="text-indigo-400 hover:text-indigo-500 active:text-indigo-700 transition flex items-center uppercase gap-2 dark:text-slate-400 dark:hover:text-slate-300 dark:active:text-slate-200">
         <ArrowLeft />
         <span>Back to home</span>
       </router-link>
@@ -9,7 +9,7 @@
 
     <h1 class="block font-thin text-2xl mb-16">API Documentation</h1>
 
-    <div class="mb-16 prose prose-indigo">
+    <div class="mb-16 prose prose-indigo dark:prose-invert">
       <p>
         Welcome to the beta API documentation and specification of the LRCLIB's API!
         Although we intend to maintain backward compatibility, please be aware that there may be breaking changes in future updates.
@@ -75,7 +75,7 @@
           </p>
 
           <h4>Example response</h4>
-          <p class="text-green-800">200 OK:</p>
+          <p class="text-green-800 dark:text-green-300">200 OK:</p>
           <p>
             <pre class="whitespace-pre-wrap">{
   &quot;id&quot;: 3396226,
@@ -89,7 +89,7 @@
 }</pre>
           </p>
 
-          <p class="text-red-800">404 Not Found:</p>
+          <p class="text-red-800 dark:text-red-300">404 Not Found:</p>
           <p>
             <pre class="whitespace-pre-wrap">{
   &quot;code&quot;: 404,
@@ -296,8 +296,8 @@
           </p>
 
           <h4>Response</h4>
-          <p class="text-green-800">Success response: 201 Created</p>
-          <p class="text-red-800">Failed response (incorrect Publish Token):</p>
+          <p class="text-green-800 dark:text-green-300">Success response: 201 Created</p>
+          <p class="text-red-800 dark:text-red-300">Failed response (incorrect Publish Token):</p>
           <p>
             <pre class="whitespace-pre-wrap">{
   &quot;code&quot;: 400,

@@ -3,10 +3,10 @@
     <main class="w-full max-w-screen-sm">
       <div class="flex flex-col justify-center items-center gap-6 w-full">
         <img src="@/assets/lrclib.png" width="512" height="512" class="w-28" alt="Logo">
-        <form class="flex items-center rounded-full w-full h-auto overflow-hidden bg-white transition" :class="{ 'ring ring-indigo-400': inputActive }" @submit.prevent="onSubmit">
-          <input type="text" v-model="keyword" class="outline-none grow h-12 px-6" placeholder="Search for lyrics..." @focus="inputActive = true" @blur="inputActive = false" autofocus>
+        <form class="flex items-center rounded-full w-full h-auto overflow-hidden bg-white dark:bg-slate-900 transition" :class="{ 'ring ring-indigo-400 dark:ring-indigo-400': inputActive }" @submit.prevent="onSubmit">
+          <input type="text" v-model="keyword" class="outline-none grow h-12 px-6 bg-transparent" placeholder="Search for lyrics..." @focus="inputActive = true" @blur="inputActive = false" autofocus>
           <button
-            class="rounded-full bg-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition text-indigo-200 text-lg h-12 w-12 flex justify-center items-center m-1"
+            class="rounded-full bg-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition text-indigo-200 text-lg h-12 w-12 flex justify-center items-center m-1 dark:bg-indigo-300 dark:hover:bg-indigo-200 dark:active:bg-indigo-100 dark:text-indigo-900"
           >
             <Magnify />
           </button>
@@ -55,10 +55,10 @@ const onSubmit = () => {
 
 <style scoped>
 .link {
-  @apply rounded-lg px-3 py-1.5 text-xs text-indigo-600 hover:bg-indigo-50 transition;
+  @apply rounded-lg px-3 py-1.5 text-xs text-indigo-600 hover:bg-indigo-50 transition dark:text-indigo-300 dark:hover:bg-indigo-950 dark:hover:text-indigo-100;
 }
 
 .link-highlight {
-  @apply rounded-lg px-3 py-1.5 text-xs text-indigo-700 bg-indigo-50 hover:bg-indigo-800 hover:text-indigo-50 transition font-bold;
+  @apply rounded-lg px-3 py-1.5 text-xs text-indigo-700 bg-indigo-50 hover:bg-indigo-800 hover:text-indigo-50 transition font-bold dark:text-indigo-200 dark:bg-indigo-950 dark:hover:bg-indigo-800 dark:hover:text-indigo-50;
 }
 </style>

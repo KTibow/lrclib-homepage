@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen py-6 px-2 mx-auto w-full max-w-screen-sm">
     <div class="text-sm mb-8">
-      <router-link to="/" class="text-indigo-400 hover:text-indigo-500 active:text-indigo-700 transition flex items-center uppercase gap-2">
+      <router-link to="/" class="text-indigo-400 hover:text-indigo-500 active:text-indigo-700 transition flex items-center uppercase gap-2 dark:text-slate-400 dark:hover:text-slate-300 dark:active:text-slate-200">
         <ArrowLeft />
         <span>Back to home</span>
       </router-link>
@@ -18,7 +18,7 @@
         <div
           v-for="dump in dumps"
           :key="dump.key"
-          class="bg-indigo-50 hover:bg-white transition px-4 py-2 rounded flex justify-between items-center"
+          class="bg-indigo-50 hover:bg-white transition px-4 py-2 rounded flex justify-between items-center dark:bg-slate-900 dark:hover:bg-slate-800"
         >
           <div class="flex flex-col gap-2">
             <div class="flex-grow truncate">
@@ -31,14 +31,14 @@
 
             <div class="flex gap-1 items-center">
               <div class="text-xs whitespace-nowrap">{{ humanFileSize(dump.size) }}</div>
-              <div class="text-xs text-indigo-300">|</div>
+              <div class="text-xs text-indigo-300 dark:text-slate-600">|</div>
               <div class="text-xs whitespace-nowrap">{{ dayjs(dump.uploaded).fromNow() }}</div>
             </div>
           </div>
 
           <div class="flex items-center">
             <a
-              class="rounded text-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition p-3 hover:text-indigo-100 active:text-indigo-100"
+              class="rounded text-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition p-3 hover:text-indigo-100 active:text-indigo-100 dark:text-indigo-300 dark:hover:bg-indigo-200 dark:hover:text-indigo-900 dark:active:bg-indigo-100"
               :href="`https://db-dumps.lrclib.net/${dump.key}`"
               target="_blank"
             ><Download /></a>

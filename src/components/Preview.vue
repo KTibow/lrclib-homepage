@@ -1,21 +1,21 @@
 <template>
   <div>
     <div class="fixed top-0 left-0 h-full w-full flex items-center justify-center z-30 p-4">
-      <div class="w-full h-[80vh] max-w-screen-sm rounded-lg bg-white flex flex-col gap-2">
+      <div class="w-full h-[80vh] max-w-screen-sm rounded-lg bg-white flex flex-col gap-2 dark:bg-slate-800">
         <div class="flex-none flex justify-between items-center px-6 py-2">
-          <div class="text-thin text-xl">Preview</div>
+          <div class="text-thin text-xl dark:text-slate-100">Preview</div>
           <button class="button button-blend transition rounded-full p-4" @click="close"><Close /></button>
         </div>
 
         <div class="px-6 grow flex flex-col justify-between gap-4 overflow-hidden">
           <div v-if="props.record.syncedLyrics && props.record.plainLyrics" class="flex justify-center">
-            <div class="rounded-full p-1 bg-indigo-100 flex justify-center gap-1">
+            <div class="rounded-full p-1 bg-indigo-100 flex justify-center gap-1 dark:bg-slate-700">
               <button class="button text-xs w-36 px-3 py-1.5 rounded-full"
-                      :class="{ 'bg-indigo-800 text-indigo-100': lyricsType === 'synced', 'hover:bg-indigo-200': lyricsType !== 'synced' }"
+                      :class="{ 'bg-indigo-800 text-indigo-100 dark:bg-indigo-300 dark:text-indigo-900': lyricsType === 'synced', 'hover:bg-indigo-200 dark:hover:bg-slate-600': lyricsType !== 'synced' }"
                       @click="lyricsType = 'synced'">Synced Lyrics
               </button>
               <button class="button text-xs w-36 px-3 py-1.5 rounded-full"
-                      :class="{ 'bg-indigo-800 text-indigo-100': lyricsType !== 'synced', 'hover:bg-indigo-200': lyricsType === 'synced' }"
+                      :class="{ 'bg-indigo-800 text-indigo-100 dark:bg-indigo-300 dark:text-indigo-900': lyricsType !== 'synced', 'hover:bg-indigo-200 dark:hover:bg-slate-600': lyricsType === 'synced' }"
                       @click="lyricsType = 'plain'">Plain Lyrics
               </button>
             </div>
@@ -23,23 +23,23 @@
 
           <div class="relative grow flex flex-col justify-between overflow-hidden">
             <button v-if="props.record.syncedLyrics || props.record.plainLyrics"
-                    class="absolute bottom-4 right-8 p-4 rounded-full bg-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition text-indigo-200"
+                    class="absolute bottom-4 right-8 p-4 rounded-full bg-indigo-700 hover:bg-indigo-800 active:bg-indigo-950 transition text-indigo-200 dark:bg-indigo-300 dark:hover:bg-indigo-200 dark:active:bg-indigo-100 dark:text-indigo-900"
                     @click="copyToClipboard">
               <ContentCopy/>
             </button>
-            <div v-if="lyricsType === 'synced'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto">
+            <div v-if="lyricsType === 'synced'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto dark:bg-slate-700 dark:text-slate-100">
               {{ props.record.syncedLyrics }}
             </div>
 
-            <div v-else-if="lyricsType === 'plain'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto">
+            <div v-else-if="lyricsType === 'plain'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto dark:bg-slate-700 dark:text-slate-100">
               {{ props.record.plainLyrics }}
             </div>
 
-            <div v-else-if="lyricsType === 'instrumental'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto italic flex items-center justify-center">
+            <div v-else-if="lyricsType === 'instrumental'" class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto italic flex items-center justify-center dark:bg-slate-700 dark:text-slate-100">
               This track is instrumental
             </div>
 
-            <div v-else class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto italic flex items-center justify-center">
+            <div v-else class="grow rounded bg-indigo-50 text-indigo-900 whitespace-pre-line p-4 overflow-auto italic flex items-center justify-center dark:bg-slate-700 dark:text-slate-100">
               There are currently no lyrics submitted for this track
             </div>
           </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <div class="fixed top-0 left-0 h-full w-full z-20 bg-black/30">
+    <div class="fixed top-0 left-0 h-full w-full z-20 bg-black/30 dark:bg-black/50">
     </div>
   </div>
 </template>
